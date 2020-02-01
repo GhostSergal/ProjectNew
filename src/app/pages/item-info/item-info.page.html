@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>item-info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input [(ngModel)]="movie.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Director</ion-label>
+    <ion-input [(ngModel)]="movie.director"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Actor</ion-label>
+    <ion-input [(ngModel)]="movie.actor"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">rating</ion-label>
+    <ion-input type="number" min="1" max="5" [(ngModel)]="movie.rating"></ion-input>-->
+    <!--<ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="movie.rating"></ion-range>-->
+  </ion-item>
+  <ion-footer *ngIf="!movie.id">
+    <ion-button expand="full" (click)="addingMovie()">
+      Add New Movie
+    </ion-button>
+  </ion-footer>
+
+
+
+  <ion-footer *ngIf="movie.id">
+      <ion-button expand="block" fill="solid" color="success" (click)="updateMov()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update Movie
+      </ion-button>
+      <ion-button expand="block" fill="solid" color="success" (click)="updateMovRating()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update Rating
+      </ion-button>
+      <ion-button expnd="block" fill="solid" color="danger" (click)="DeteleMov()">
+        Delete Movie
+      </ion-button>
+  </ion-footer>
+</ion-content>

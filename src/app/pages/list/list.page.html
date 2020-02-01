@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" routerLink="/item-info">
+    Add Movie
+  </ion-button>
+  <ion-list>
+    <ion-item button [routerLink]="['/item-info',m.id]" *ngFor="let m of (MoviesList | async)">
+      {{ m.id }}
+      {{ m.title }}
+      {{ m.actor }}
+      {{ m.rating }}
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item (click)="watchvid(tzBGEqkwCoY)">Vid1</ion-item>
+    <ion-item (click)="watchvid(YAi7BW8rIpY)">Vid2</ion-item>
+    <ion-item (click)="watchvid(O9ryyPgtLJ4)">Vid3</ion-item>
+  </ion-list>
+
+</ion-content>
